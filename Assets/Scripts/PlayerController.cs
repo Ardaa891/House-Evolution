@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             {
                 touchXDelta = Input.GetAxis("Mouse X");
                 offset = transform.GetComponent<SplineFollower>().motion.offset.x +  25f * touchXDelta * Time.fixedDeltaTime;
-                offset = Mathf.Clamp(offset, -9f, 9f);
+                offset = Mathf.Clamp(offset, -7f, 7f);
                 transform.GetComponent<SplineFollower>().motion.offset = new Vector3(offset, transform.GetComponent<SplineFollower>().motion.offset.y);
                 
             }
