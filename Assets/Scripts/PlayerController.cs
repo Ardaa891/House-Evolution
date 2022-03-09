@@ -98,10 +98,11 @@ public class PlayerController : MonoBehaviour
         {
             seq.Join(cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
             seq.Join(sphere.transform.DOScale(100, 1f).SetEase(Ease.InOutBounce));
-            seq.Join(sphere.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear));
+            seq.Join(sphere.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.Fast).SetEase(Ease.Linear));
             seq.Join(sphere.transform.DOMoveY(3, 0.5f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo));
             //cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce);
             sphere.SetActive(true);
+            cylinder.SetActive(false);
             //sphere.transform.DOScale(100, 1f).SetEase(Ease.InOutBounce);
             other.gameObject.SetActive(false);
 
@@ -110,20 +111,24 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Gate2"))
         {
-            cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce);
-            sphere.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce);
+            seq.Join(cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
+            seq.Join(sphere.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
             capsule.SetActive(true);
-            capsule.transform.DOScale(2, 1f).SetEase(Ease.InOutBounce);
+            seq.Join(capsule.transform.DOScale(2, 1f).SetEase(Ease.InOutBounce));
+            seq.Join(capsule.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.Fast).SetEase(Ease.Linear));
+            seq.Join(capsule.transform.DOMoveY(3, 0.5f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo));
             other.gameObject.SetActive(false);
         }
 
         if (other.CompareTag("Gate3"))
         {
-            sphere.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce);
-            cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce);
-            capsule.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce);
+            seq.Join(sphere.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
+            seq.Join(cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
+            seq.Join(capsule.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
             cylinder.SetActive(true);
-            cylinder.transform.DOScale(2, 1f).SetEase(Ease.InOutBounce);
+            seq.Join(cylinder.transform.DOScale(2, 1f).SetEase(Ease.InOutBounce));
+            seq.Join(cylinder.transform.DOMoveY(3, 0.5f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo));
+            seq.Join(cylinder.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.Fast).SetEase(Ease.Linear));
             other.gameObject.SetActive(false);
         }
 
