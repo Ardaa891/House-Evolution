@@ -17,9 +17,10 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public SplineFollower follower;
     public GameObject playButton;
-    public GameObject cube, sphere, capsule, cylinder;
+    public GameObject cube, sphere, capsule, cylinder, house1, house2;
     public float offset;
     Sequence seq;
+    public int score = 0;
 
     private void Awake()
     {
@@ -77,13 +78,49 @@ public class PlayerController : MonoBehaviour
 
             }
 
+            if (score >= 10 )
+            {
+                //seq.Join(cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
+                cube.SetActive(false);
+                house1.SetActive(true);
+                //seq.Join(sphere.transform.DOScale(100, 1f).SetEase(Ease.InOutBounce));
+                //seq.Join(sphere.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.Fast).SetEase(Ease.Linear));
+                //seq.Join(sphere.transform.DOMoveY(3, 0.5f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo));
+                //sphere.SetActive(true);
+
+            }
+
+            if (score >= 20)
+            {
+                house2.SetActive(true);
+                house1.SetActive(false);
+                //seq.Join(sphere.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
+                //seq.Join(capsule.transform.DOScale(2, 1f).SetEase(Ease.InOutBounce));
+                //seq.Join(capsule.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.Fast).SetEase(Ease.Linear));
+                //seq.Join(capsule.transform.DOMoveY(3, 0.5f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo));
+            }
+
+            if(score < 10)
+            {
+                house1.SetActive(false);
+                cube.SetActive(true);
+            }
+
+
 
             
+
+
+
         }
         else
         {
             return;
         }
+
+        
+
+        
        
         
         
@@ -94,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Gate"))
+        /*if (other.CompareTag("Gate"))
         {
             seq.Join(cube.transform.DOScale(0, 0.2f).SetEase(Ease.InBounce));
             seq.Join(sphere.transform.DOScale(100, 1f).SetEase(Ease.InOutBounce));
@@ -105,6 +142,7 @@ public class PlayerController : MonoBehaviour
             cylinder.SetActive(false);
             //sphere.transform.DOScale(100, 1f).SetEase(Ease.InOutBounce);
             other.gameObject.SetActive(false);
+            capsule.SetActive(false);
 
            
         }
@@ -118,6 +156,7 @@ public class PlayerController : MonoBehaviour
             seq.Join(capsule.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.Fast).SetEase(Ease.Linear));
             seq.Join(capsule.transform.DOMoveY(3, 0.5f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo));
             other.gameObject.SetActive(false);
+            cylinder.gameObject.SetActive(false);
         }
 
         if (other.CompareTag("Gate3"))
@@ -130,7 +169,7 @@ public class PlayerController : MonoBehaviour
             seq.Join(cylinder.transform.DOMoveY(3, 0.5f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo));
             seq.Join(cylinder.transform.DOLocalRotate(new Vector3(0, 1080, 0), 1f, RotateMode.Fast).SetEase(Ease.Linear));
             other.gameObject.SetActive(false);
-        }
+        }*/
 
         if (other.CompareTag("End"))
         {
@@ -138,6 +177,31 @@ public class PlayerController : MonoBehaviour
             LevelController.Current.finishGameMenu.SetActive(true);
             follower.follow = false;
         }
+
+
+
+        if (other.CompareTag("Gate"))
+        {
+            IncreaseScore(5);
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.CompareTag("BadGate"))
+        {
+            DecreaseScore(5);
+            other.gameObject.SetActive(false);
+        }
+
+    }
+
+    public void IncreaseScore(int increment)
+    {
+        score += increment;
+    }
+
+    public void DecreaseScore(int increment)
+    {
+        score -= increment;
     }
 
 }

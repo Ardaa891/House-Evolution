@@ -8,6 +8,7 @@ TagManager:
   - Gate2
   - Gate3
   - End
+  - BadGate
   layers:
   - Default
   - TransparentFX
