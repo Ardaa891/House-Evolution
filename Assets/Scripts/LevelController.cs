@@ -101,5 +101,6 @@ public class LevelController : MonoBehaviour
         gameActive = true;
         PlayerController.Currrent.playButton.SetActive(false);
         PlayerController.Currrent.follower.follow = true;
+        
     }
 }
