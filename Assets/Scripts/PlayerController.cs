@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour
     public float yOffset ;
     Sequence seq;
     public int score = 0;
-    public float currentZ;
-    Color color1, color2;
+    public Camera cam;
+    public GameObject _cam;
+    
+    
     public Material  gateMaterial, badGateMaterial;
 
     private void Awake()
@@ -73,14 +75,14 @@ public class PlayerController : MonoBehaviour
                
                 touchXDelta = Input.GetAxis("Mouse X");
                 offset = transform.GetComponent<SplineFollower>().motion.offset.x +  25f * touchXDelta * Time.fixedDeltaTime;
-                offset = Mathf.Clamp(offset, -7f, 7f);
+                offset = Mathf.Clamp(offset, -6f, 7f);
                 transform.GetComponent<SplineFollower>().motion.offset = new Vector3(offset, yOffset);
 
-                if (touchXDelta >= -7f && touchXDelta < 0)
+                if (touchXDelta >= -6f && touchXDelta < 0)
                 {
                     
                     //transform.GetComponent<SplineFollower>().motion.rotationOffset += new Vector3(0, -rotY)*5*Time.fixedDeltaTime;
-                    transform.DORotate(new Vector3(0, -15, 0), 0.2f, RotateMode.Fast).SetEase(Ease.Linear).OnComplete(()=>Rot());
+                    transform.DORotate(new Vector3(0, -6, 0), 0.2f, RotateMode.Fast).SetEase(Ease.Linear).OnComplete(()=>Rot());
 
 
 
@@ -138,10 +140,27 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("End"))
         {
+            
+            
+            //LevelController.Current.cam.GetComponent<SplineFollower>().follow = false;
+            seq.Join(cam.transform.DOLookAt(new Vector3(transform.position.x, transform.position.y, transform.position.z), 1f, AxisConstraint.X).SetEase(Ease.Linear));
+            seq.Join(cam.transform.DOLocalMove(new Vector3(0f, 2, 30), 2f).SetEase(Ease.Linear));
+            seq.Join(cam.transform.DOLocalRotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.Linear));
+            GetComponent<SplineFollower>().motion.offset = new Vector3(0, yOffset);
+            //_cam.transform.DOLocalRotate(new Vector3(0, 360.176f, 0), 1f, RotateMode.WorldAxisAdd).SetEase(Ease.Linear).SetLoops(-1, LoopType.Restart);
+            
+
+        }
+        if (other.CompareTag("camEnd"))
+        {
+            LevelController.Current.cam.GetComponent<SplineFollower>().follow = false;
+        }
+        if (other.CompareTag("finish"))
+        {
+            transform.DOLocalRotate(new Vector3(0, 720, 0), 2f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear);
             LevelController.Current.gameActive = false;
             LevelController.Current.finishGameMenu.SetActive(true);
             follower.follow = false;
-            LevelController.Current.cam.GetComponent<SplineFollower>().follow = false;
         }
 
 
@@ -217,7 +236,7 @@ public class PlayerController : MonoBehaviour
         {
             DecreaseScore(5);
             //other.gameObject.SetActive(false);
-            transform.DOScale(1.03f, 0.3f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
+            transform.DOScale(1.1f, 0.3f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             //ColorUtility.TryParseHtmlString("D6D6D6", out color1);
             other.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material = badGateMaterial;
 

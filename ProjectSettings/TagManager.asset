@@ -9,6 +9,8 @@ TagManager:
   - Gate3
   - End
   - BadGate
+  - camEnd
+  - finish
   layers:
   - Default
   - TransparentFX
