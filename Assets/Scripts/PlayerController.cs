@@ -141,6 +141,7 @@ public class PlayerController : MonoBehaviour
             LevelController.Current.gameActive = false;
             LevelController.Current.finishGameMenu.SetActive(true);
             follower.follow = false;
+            LevelController.Current.cam.GetComponent<SplineFollower>().follow = false;
         }
 
 
@@ -177,6 +178,8 @@ public class PlayerController : MonoBehaviour
             {
                 frenchHouse.SetActive(false);
                 spanishHouse.SetActive(true);
+                englishHouse.SetActive(false);
+                dutchHouse.SetActive(false);
             }
             
             if (score >= 40)

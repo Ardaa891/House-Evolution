@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Dreamteck.Splines;
 
 public class LevelController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LevelController : MonoBehaviour
     public List<GameObject> levels = new List<GameObject>();
     public GameObject gameOverMenu, finishGameMenu;
     public bool gameActive = false;
+    public GameObject cam;
 
     [Space]
     [Space]
@@ -20,6 +22,7 @@ public class LevelController : MonoBehaviour
 
     private void Awake()
     {
+        
         Current = this;
 
         if (isTesting == false)
@@ -101,6 +104,6 @@ public class LevelController : MonoBehaviour
         gameActive = true;
         PlayerController.Currrent.playButton.SetActive(false);
         PlayerController.Currrent.follower.follow = true;
-        
+        cam.GetComponent<SplineFollower>().follow = true;
     }
 }
