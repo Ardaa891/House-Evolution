@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Dreamteck.Splines;
+using DG.Tweening;
 
 public class LevelController : MonoBehaviour
 {
     public static LevelController Current;
     public List<GameObject> levels = new List<GameObject>();
-    public GameObject gameOverMenu, finishGameMenu;
+    public GameObject levelStartMenu, gameOverMenu, finishGameMenu;
     public bool gameActive = false;
     public GameObject cam;
     public GameObject calendar;
@@ -107,5 +108,6 @@ public class LevelController : MonoBehaviour
         PlayerController.Currrent.follower.follow = true;
         cam.GetComponent<SplineFollower>().follow = true;
         calendar.GetComponent<SplineFollower>().follow = true;
+        calendar.transform.DOScale(1, 0.2f).SetEase(Ease.Linear);
     }
 }
