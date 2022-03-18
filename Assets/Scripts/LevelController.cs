@@ -13,6 +13,7 @@ public class LevelController : MonoBehaviour
     public GameObject gameOverMenu, finishGameMenu;
     public bool gameActive = false;
     public GameObject cam;
+    public GameObject calendar;
 
     [Space]
     [Space]
@@ -105,5 +106,6 @@ public class LevelController : MonoBehaviour
         PlayerController.Currrent.playButton.SetActive(false);
         PlayerController.Currrent.follower.follow = true;
         cam.GetComponent<SplineFollower>().follow = true;
+        calendar.GetComponent<SplineFollower>().follow = true;
     }
 }
