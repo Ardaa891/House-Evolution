@@ -11,6 +11,7 @@ TagManager:
   - BadGate
   - camEnd
   - finish
+  - trap
   layers:
   - Default
   - TransparentFX

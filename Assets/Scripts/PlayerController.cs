@@ -139,6 +139,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("trap"))
+        {
+            transform.DOScale(1.1f, 0.3f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
+            IncreaseScore(-5);
+            //transform.DOShakePosition(1f, new Vector3(1, 0, 0), 50, 1, false, true);
+        }
        
 
 
@@ -151,7 +157,8 @@ public class PlayerController : MonoBehaviour
             GetComponent<SplineFollower>().motion.rotationOffset = new Vector3(0, 9);
             LevelController.Current.calendar.GetComponent<SplineFollower>().follow = false;
             calendar.SetActive(false);
-            
+            LevelController.Current.gameActive = false;    
+
 
         }
         if (other.CompareTag("camEnd"))
@@ -161,7 +168,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("finish"))
         {
             transform.DOLocalRotate(new Vector3(0, 720, 0), 2f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear);
-            LevelController.Current.gameActive = false;
+            // LevelController.Current.gameActive = false;
             LevelController.Current.finishGameMenu.SetActive(true);
             LevelController.Current.levelStartMenu.SetActive(false);
             follower.follow = false;
