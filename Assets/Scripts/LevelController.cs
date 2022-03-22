@@ -15,6 +15,7 @@ public class LevelController : MonoBehaviour
     public bool gameActive = false;
     public GameObject cam;
     public GameObject calendar;
+    public GameObject moneyIcons;
 
     [Space]
     [Space]
@@ -64,7 +65,70 @@ public class LevelController : MonoBehaviour
 
     public void NextLevel()
     {
-        
+        UpdateMoney();
+        moneyIcons.SetActive(true);
+        StartCoroutine(IconMove());
+        //StartCoroutine(LoadNextLevel());
+
+        /*if ((levels.IndexOf(CurrentLevel) + 1) == levels.Count)
+        {
+
+
+
+
+            PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+
+
+
+            //  GameHandler.Instance.Appear_TransitionPanel();
+
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
+        }
+
+
+        else
+        {
+            CurrentLevel = levels[(PlayerPrefs.GetInt("level") + 1) % levels.Count];
+
+
+
+            levels[(PlayerPrefs.GetInt("level")) % levels.Count].SetActive(false);
+
+
+            PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+
+            levels[PlayerPrefs.GetInt("level") % levels.Count].SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        }*/
+    }
+
+    public void StartLevel()
+    {
+        gameActive = true;
+        PlayerController.Currrent.playButton.SetActive(false);
+        PlayerController.Currrent.follower.follow = true;
+        cam.GetComponent<SplineFollower>().follow = true;
+        calendar.GetComponent<SplineFollower>().follow = true;
+        calendar.transform.DOScale(1, 0.2f).SetEase(Ease.Linear);
+    }
+
+    public void UpdateMoney()
+    {
+
+
+        PriceGenerator.Current.totalPriceTextBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = PriceGenerator.Current.price.ToString();
+    }
+
+    
+
+    IEnumerator LoadNextLevel()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+
         if ((levels.IndexOf(CurrentLevel) + 1) == levels.Count)
         {
 
@@ -101,13 +165,9 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    public void StartLevel()
+    IEnumerator IconMove()
     {
-        gameActive = true;
-        PlayerController.Currrent.playButton.SetActive(false);
-        PlayerController.Currrent.follower.follow = true;
-        cam.GetComponent<SplineFollower>().follow = true;
-        calendar.GetComponent<SplineFollower>().follow = true;
-        calendar.transform.DOScale(1, 0.2f).SetEase(Ease.Linear);
+        yield return new WaitForSecondsRealtime(1f);
+        MoneyIcon.Current.MoneyIconMove();
     }
 }

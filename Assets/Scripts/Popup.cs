@@ -21,7 +21,7 @@ public class Popup : MonoBehaviour
     {
         float randomPos = Random.Range(-2, 2);
         Transform textTemp = Instantiate(text, new Vector3(randomPos, textHeight, parent.transform.position.z), Quaternion.identity, parent.transform);
-        textTemp.GetComponent<TextMeshPro>().text = date.ToString() ;
+        //textTemp.GetComponent<TextMeshPro>().text = date.ToString() ;
         textTemp.transform.DOMoveY(textHeight + 2, 1f, false);
         textTemp.transform.DOScale(1f, 1f);
         StartCoroutine(TurnOffText(textTemp));
