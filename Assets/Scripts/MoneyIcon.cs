@@ -28,15 +28,15 @@ public class MoneyIcon : MonoBehaviour
     
     public void MoneyIconMove()
     {
-        seq1.Join(moneyIcon1.rectTransform.DOLocalMove(new Vector2(300,1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon2.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon3.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon4.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon5.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon6.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon7.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon8.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon9.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
-        seq1.Join(moneyIcon10.rectTransform.DOLocalMove(new Vector2(300, 1762.975f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon1.rectTransform.DOLocalMove(new Vector2(312,1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon2.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon3.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon4.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon5.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon6.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon7.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon8.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon9.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
+        seq1.Join(moneyIcon10.rectTransform.DOLocalMove(new Vector2(312, 1495f), 0.5f).SetEase(Ease.Linear));
     }
 }
