@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public GameObject calendar;
     public TextMeshProUGUI popup;
     public Material  gateMaterial, badGateMaterial;
+    public GameObject Light;
 
     private void Awake()
     {
@@ -243,7 +244,7 @@ public class PlayerController : MonoBehaviour
             LevelController.Current.gameActive = false;
             RenderSettings.skybox = skyboxMat;
             Camera.main.clearFlags = CameraClearFlags.Skybox;
-
+            Light.transform.DORotate(new Vector3(142,147,90), 1);
 
         }
         if (other.CompareTag("camEnd"))
