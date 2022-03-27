@@ -2639,7 +2639,7 @@ Material:
     - _OutlineWidth: 0.866
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 0.40581125
+    - _ScaleRatioA: 0.40581122
     - _ScaleRatioB: 0
     - _ScaleRatioC: 0
     - _ScaleX: 1

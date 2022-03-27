@@ -68,7 +68,7 @@ public class LevelController : MonoBehaviour
         UpdateMoney();
         moneyIcons.SetActive(true);
         StartCoroutine(IconMove());
-        //StartCoroutine(LoadNextLevel());
+        StartCoroutine(LoadNextLevel());
 
         /*if ((levels.IndexOf(CurrentLevel) + 1) == levels.Count)
         {
@@ -111,9 +111,11 @@ public class LevelController : MonoBehaviour
         gameActive = true;
         PlayerController.Currrent.playButton.SetActive(false);
         PlayerController.Currrent.follower.follow = true;
-        cam.GetComponent<SplineFollower>().follow = true;
-        calendar.GetComponent<SplineFollower>().follow = true;
-        calendar.transform.DOScale(1, 0.2f).SetEase(Ease.Linear);
+        //cam.GetComponent<SplineFollower>().follow = true;
+        CameraFollower.Current.StartFollowing();
+        //calendar.GetComponent<SplineFollower>().follow = true;
+        //calendar.transform.DOScale(1, 0.2f).SetEase(Ease.Linear);
+        CalendarController.Current.StartFollowing();
     }
 
     public void UpdateMoney()
@@ -127,7 +129,7 @@ public class LevelController : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
-        yield return new WaitForSecondsRealtime(5f);
+        yield return new WaitForSecondsRealtime(3f);
 
         if ((levels.IndexOf(CurrentLevel) + 1) == levels.Count)
         {

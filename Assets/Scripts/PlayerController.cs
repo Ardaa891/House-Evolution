@@ -239,17 +239,19 @@ public class PlayerController : MonoBehaviour
             seq.Join(cam.transform.DOLocalRotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.Linear));
             GetComponent<SplineFollower>().motion.offset = new Vector3(0, yOffset);
             GetComponent<SplineFollower>().motion.rotationOffset = new Vector3(0, 9);
-            LevelController.Current.calendar.GetComponent<SplineFollower>().follow = false;
-            calendar.SetActive(false);
+            //LevelController.Current.calendar.GetComponent<SplineFollower>().follow = false;
+            //calendar.SetActive(false);
             LevelController.Current.gameActive = false;
             RenderSettings.skybox = skyboxMat;
             Camera.main.clearFlags = CameraClearFlags.Skybox;
             Light.transform.DORotate(new Vector3(142,147,90), 1);
+            CalendarController.Current.StopFollowing();
 
         }
         if (other.CompareTag("camEnd"))
         {
-            LevelController.Current.cam.GetComponent<SplineFollower>().follow = false;
+            // LevelController.Current.cam.GetComponent<SplineFollower>().follow = false;
+            CameraFollower.Current.StopFollowing();
         }
         if (other.CompareTag("finish"))
         {
