@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using TMPro;
 using Dreamteck.Splines;
+using MoreMountains.NiceVibrations;
 
 public class PlayerController : MonoBehaviour
 {
@@ -80,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
                 House1.SetActive(false);
                 House2.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
 
                 //popup.rectTransform.DOScale(1, 1f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 House3.SetActive(true);
                 House2.SetActive(false);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
                 House4.SetActive(true);
                 //englishHouse.SetActive(false);
                 //dutchHouse.SetActive(false);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
@@ -110,7 +111,7 @@ public class PlayerController : MonoBehaviour
             {
                 House4.SetActive(false);
                 House5.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
+               // calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
             if (score >= 45)
@@ -118,7 +119,7 @@ public class PlayerController : MonoBehaviour
                 House5.SetActive(false);
                 
                 House6.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1725s";
+               // calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1725s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
@@ -126,7 +127,7 @@ public class PlayerController : MonoBehaviour
             {
                 House2.SetActive(false);
                 House1.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1600s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1600s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
@@ -134,7 +135,7 @@ public class PlayerController : MonoBehaviour
             {
                 House3.SetActive(false);
                 House2.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
@@ -142,7 +143,7 @@ public class PlayerController : MonoBehaviour
             {
                 House3.SetActive(true);
                 House4.SetActive(false);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
@@ -151,7 +152,7 @@ public class PlayerController : MonoBehaviour
                 House4.SetActive(true);
                 House5.SetActive(false);
                 
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
             if (score > 40 && score < 45)
@@ -159,7 +160,7 @@ public class PlayerController : MonoBehaviour
                 House6.SetActive(false);
                 House5.SetActive(true);
                 
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
+                //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
@@ -228,6 +229,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.DOScale(1.1f, 0.3f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             IncreaseScore(-5);
+            MMVibrationManager.Haptic(HapticTypes.MediumImpact);
         }
        
 
@@ -246,6 +248,7 @@ public class PlayerController : MonoBehaviour
             Camera.main.clearFlags = CameraClearFlags.Skybox;
             Light.transform.DORotate(new Vector3(142,147,90), 1);
             CalendarController.Current.StopFollowing();
+            MMVibrationManager.Haptic(HapticTypes.Success);
 
         }
         if (other.CompareTag("camEnd"))
@@ -272,93 +275,8 @@ public class PlayerController : MonoBehaviour
             IncreaseScore(gateDate);
             transform.DOScale(1.1f, 0.3f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             other.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material = gateMaterial;
+            MMVibrationManager.Haptic(HapticTypes.MediumImpact);
 
-
-
-           /* if (score >= 10)
-            {
-
-                tudorHouse.SetActive(false);
-                dutchHouse.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-                
-                //popup.rectTransform.DOScale(1, 1f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-                
-               
-            }
-
-            if (score >= 20)
-            {
-                gothicHouse.SetActive(true);
-                dutchHouse.SetActive(false);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-
-            if(score >= 30)
-            {
-                gothicHouse.SetActive(false);
-                colonialHouse.SetActive(true);
-                englishHouse.SetActive(false);
-                dutchHouse.SetActive(false);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-            
-            if (score >= 40)
-            {
-                colonialHouse.SetActive(false);
-                englishHouse.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-            if(score >= 45)
-            {
-                englishHouse.SetActive(false);
-                frenchHouse.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1725s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-
-            if (score < 10)
-            {
-                dutchHouse.SetActive(false);
-                tudorHouse.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1600s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-
-            if(score > 10 && score < 20)
-            {
-                gothicHouse.SetActive(false);
-                dutchHouse.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-
-            if (score > 20 && score < 30)
-            {
-                gothicHouse.SetActive(true);
-                colonialHouse.SetActive(false);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-
-            if (score > 30 && score < 40)
-            {
-                colonialHouse.SetActive(true);
-                englishHouse.SetActive(false);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }
-            if(score > 40 && score < 45)
-            {
-                frenchHouse.SetActive(false);
-                englishHouse.SetActive(true);
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
-                calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
-            }*/
         }
 
         
@@ -370,14 +288,7 @@ public class PlayerController : MonoBehaviour
         score += increment;
     }
 
-  /*void EnglishHome()
-    {
-        englishHouse.SetActive(true);
-        
-        seq1.Join(englishHouse.transform.DOLocalRotate(new Vector3(0, 890, 0), 0.7f, RotateMode.FastBeyond360).SetEase(Ease.OutQuad));
-        seq1.Join(englishHouse.transform.DOLocalMove(new Vector3(0, 2.15f, 0), 0.3f).SetEase(Ease.OutQuad).SetLoops(2, LoopType.Yoyo));
-
-    }*/
+  
     
 
     void Rot()

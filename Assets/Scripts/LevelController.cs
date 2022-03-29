@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using Dreamteck.Splines;
 using DG.Tweening;
+using MoreMountains.NiceVibrations;
 
 public class LevelController : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class LevelController : MonoBehaviour
         moneyIcons.SetActive(true);
         StartCoroutine(IconMove());
         StartCoroutine(LoadNextLevel());
+        MMVibrationManager.Haptic(HapticTypes.Selection);
 
         /*if ((levels.IndexOf(CurrentLevel) + 1) == levels.Count)
         {
@@ -111,10 +113,9 @@ public class LevelController : MonoBehaviour
         gameActive = true;
         PlayerController.Currrent.playButton.SetActive(false);
         PlayerController.Currrent.follower.follow = true;
-        //cam.GetComponent<SplineFollower>().follow = true;
+        
         CameraFollower.Current.StartFollowing();
-        //calendar.GetComponent<SplineFollower>().follow = true;
-        //calendar.transform.DOScale(1, 0.2f).SetEase(Ease.Linear);
+        
         CalendarController.Current.StartFollowing();
     }
 

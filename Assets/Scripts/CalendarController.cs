@@ -7,6 +7,8 @@ using DG.Tweening;
 public class CalendarController : MonoBehaviour
 {
     public static CalendarController Current;
+
+    
     
     void Start()
     {
@@ -31,4 +33,6 @@ public class CalendarController : MonoBehaviour
         GetComponent<SplineFollower>().follow = false;
         gameObject.SetActive(false);
     }
+
+    
 }

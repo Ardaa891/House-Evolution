@@ -807,7 +807,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     Standalone: DREAMTECK_SPLINES
-    iPhone: DREAMTECK_SPLINES
+    iPhone: DREAMTECK_SPLINES;MOREMOUNTAINS_NICEVIBRATIONS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
