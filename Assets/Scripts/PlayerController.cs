@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public SplineFollower follower;
     public GameObject playButton;
-    public GameObject tudorHouse, dutchHouse, gothicHouse, colonialHouse, englishHouse, frenchHouse;
+    public GameObject House1, House2, House3, House4, House5, House6;
     public float offset;
     public float yOffset ;
     public float calendarOffset;
@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour
             if (score >= 10)
             {
 
-                tudorHouse.SetActive(false);
-                dutchHouse.SetActive(true);
+                House1.SetActive(false);
+                House2.SetActive(true);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
 
@@ -90,16 +90,16 @@ public class PlayerController : MonoBehaviour
 
             if (score >= 20)
             {
-                gothicHouse.SetActive(true);
-                dutchHouse.SetActive(false);
+                House3.SetActive(true);
+                House2.SetActive(false);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
             if (score >= 30)
             {
-                gothicHouse.SetActive(false);
-                colonialHouse.SetActive(true);
+                House3.SetActive(false);
+                House4.SetActive(true);
                 //englishHouse.SetActive(false);
                 //dutchHouse.SetActive(false);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
@@ -108,56 +108,56 @@ public class PlayerController : MonoBehaviour
 
             if (score >= 40)
             {
-                colonialHouse.SetActive(false);
-                englishHouse.SetActive(true);
+                House4.SetActive(false);
+                House5.SetActive(true);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
             if (score >= 45)
             {
-                englishHouse.SetActive(false);
+                House5.SetActive(false);
                 
-                frenchHouse.SetActive(true);
+                House6.SetActive(true);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1725s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
             if (score < 10)
             {
-                dutchHouse.SetActive(false);
-                tudorHouse.SetActive(true);
+                House2.SetActive(false);
+                House1.SetActive(true);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1600s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
             if (score > 10 && score < 20)
             {
-                gothicHouse.SetActive(false);
-                dutchHouse.SetActive(true);
+                House3.SetActive(false);
+                House2.SetActive(true);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1625s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
             if (score > 20 && score < 30)
             {
-                gothicHouse.SetActive(true);
-                colonialHouse.SetActive(false);
+                House3.SetActive(true);
+                House4.SetActive(false);
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1650s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
 
             if (score > 30 && score < 40)
             {
-                colonialHouse.SetActive(true);
-                englishHouse.SetActive(false);
+                House4.SetActive(true);
+                House5.SetActive(false);
                 
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1675s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
             if (score > 40 && score < 45)
             {
-                frenchHouse.SetActive(false);
-                englishHouse.SetActive(true);
+                House6.SetActive(false);
+                House5.SetActive(true);
                 
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
