@@ -13,7 +13,7 @@ public class canvas : MonoBehaviour
     {
         Current = this;
         
-        transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = ("LEVEL " + (PlayerPrefs.GetInt("level") + 1));
+        transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ("lvl " + (PlayerPrefs.GetInt("level") + 1));
     }
 
     // Update is called once per frame

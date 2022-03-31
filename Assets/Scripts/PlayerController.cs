@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI popup;
     public Material  gateMaterial, badGateMaterial;
     public GameObject Light;
-
+    public GameObject ticket;
+    
     private void Awake()
     {
        
@@ -262,6 +263,7 @@ public class PlayerController : MonoBehaviour
             // LevelController.Current.gameActive = false;
             LevelController.Current.finishGameMenu.SetActive(true);
             LevelController.Current.levelStartMenu.SetActive(false);
+            ticket.SetActive(true);
             follower.follow = false;
            
 

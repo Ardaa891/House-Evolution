@@ -8,6 +8,7 @@ using Dreamteck.Splines;
 using DG.Tweening;
 using MoreMountains.NiceVibrations;
 
+
 public class LevelController : MonoBehaviour
 {
     public static LevelController Current;
@@ -17,6 +18,12 @@ public class LevelController : MonoBehaviour
     public GameObject cam;
     public GameObject calendar;
     public GameObject moneyIcons;
+    public GameObject totalPriceTextBox;
+    public int money;
+
+    protected bool apkStart = true;
+    
+    protected bool apkSuccess = true;
 
     [Space]
     [Space]
@@ -49,13 +56,16 @@ public class LevelController : MonoBehaviour
         {
             CurrentLevel.SetActive(true);
         }
+
+       
     }
 
 
 
     void Start()
     {
-        
+        money = PlayerPrefs.GetInt("money", 0);
+       totalPriceTextBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("money", 0).ToString();
     }
 
     
@@ -110,20 +120,27 @@ public class LevelController : MonoBehaviour
 
     public void StartLevel()
     {
+        //APKGameStart();
         gameActive = true;
         PlayerController.Currrent.playButton.SetActive(false);
         PlayerController.Currrent.follower.follow = true;
-        
+        levelStartMenu.SetActive(false);
         CameraFollower.Current.StartFollowing();
         
         CalendarController.Current.StartFollowing();
+
+       
     }
 
     public void UpdateMoney()
     {
 
 
-        PriceGenerator.Current.totalPriceTextBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = PriceGenerator.Current.price.ToString();
+
+
+        //PriceGenerator.Current.totalPriceTextBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = PriceGenerator.Current.price.ToString();
+        PlayerPrefs.SetInt("money", money + PriceGenerator.Current.price);
+        totalPriceTextBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("money").ToString();
     }
 
     
@@ -173,4 +190,22 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         MoneyIcon.Current.MoneyIconMove();
     }
+
+    /*public void APKGameStart()
+    {
+        if (apkStart)
+        {
+            Elephant.LevelStarted(PlayerPrefs.GetInt("level") + 1);
+            apkStart = false;
+        }
+    }
+
+    public void APKGameSuccess()
+    {
+        if (apkSuccess)
+        {
+            Elephant.LevelCompleted(PlayerPrefs.GetInt("level") + 1);
+            apkSuccess = false;
+        }
+    }*/
 }
