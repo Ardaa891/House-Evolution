@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             float touchXDelta = 0;
 
 
-            if (score >= 10)
+            /*if (score >= 10)
             {
 
                 House1.SetActive(false);
@@ -163,8 +163,69 @@ public class PlayerController : MonoBehaviour
                 
                 //calendar.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "1700s";
                 calendar.transform.GetChild(0).GetChild(0).GetChild(0).transform.DOScale(1.2f, 0.2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
+            }*/
+
+            if (score < 10)
+            {
+                House2.SetActive(false);
+                House1.SetActive(true);
+                House3.SetActive(false);
+                House4.SetActive(false);
+                House5.SetActive(false);
+                House6.SetActive(false);
             }
 
+            if(score >= 10 && score < 20)
+            {
+                House1.SetActive(false);
+                House2.SetActive(true);
+                House4.SetActive(false);
+                House3.SetActive(false);
+                House5.SetActive(false);
+                House6.SetActive(false);
+            }
+            if(score >=20 && score < 30)
+            {
+                House3.SetActive(true);
+                House2.SetActive(false);
+                House1.SetActive(false);
+                House4.SetActive(false);
+                House5.SetActive(false);
+                House6.SetActive(false);
+            }
+            if(score >= 30 && score < 40)
+            {
+                House3.SetActive(false);
+                House4.SetActive(true);
+                House1.SetActive(false);
+                House2.SetActive(false);
+                House5.SetActive(false);
+                House6.SetActive(false);
+            }
+            if(score >= 40 && score < 45)
+            {
+                House5.SetActive(true);
+                House4.SetActive(false);
+                House1.SetActive(false);
+                House2.SetActive(false);
+                House3.SetActive(false);
+                House4.SetActive(false);
+            }
+            if(score >= 45)
+            {
+                House6.SetActive(true);
+                House5.SetActive(false);
+                House1.SetActive(false);
+                House2.SetActive(false);
+                House3.SetActive(false);
+                House4.SetActive(false);
+            }
+            
+            
+            
+            
+            
+            
             if (Input.GetMouseButton(0))
             {
                
@@ -228,7 +289,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("trap"))
         {
-            transform.DOScale(1.1f, 0.3f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
+            transform.DOScale(1.05f, 0.15f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             IncreaseScore(-5);
             MMVibrationManager.Haptic(HapticTypes.MediumImpact);
         }
@@ -265,6 +326,7 @@ public class PlayerController : MonoBehaviour
             LevelController.Current.levelStartMenu.SetActive(false);
             ticket.SetActive(true);
             follower.follow = false;
+            LevelController.Current.APKGameSuccess();
            
 
         }
@@ -275,7 +337,7 @@ public class PlayerController : MonoBehaviour
         {
             float gateDate = other.GetComponent<Gate>().date;
             IncreaseScore(gateDate);
-            transform.DOScale(1.1f, 0.3f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
+            transform.DOScale(1.05f, 0.15f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             other.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material = gateMaterial;
             MMVibrationManager.Haptic(HapticTypes.MediumImpact);
 

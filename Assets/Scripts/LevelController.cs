@@ -7,7 +7,7 @@ using TMPro;
 using Dreamteck.Splines;
 using DG.Tweening;
 using MoreMountains.NiceVibrations;
-
+using ElephantSDK;
 
 
 public class LevelController : MonoBehaviour
@@ -121,7 +121,7 @@ public class LevelController : MonoBehaviour
 
     public void StartLevel()
     {
-        //APKGameStart();
+        APKGameStart();
         gameActive = true;
         PlayerController.Currrent.playButton.SetActive(false);
         PlayerController.Currrent.follower.follow = true;
@@ -192,7 +192,7 @@ public class LevelController : MonoBehaviour
         MoneyIcon.Current.MoneyIconMove();
     }
 
-    /*public void APKGameStart()
+    public void APKGameStart()
     {
         if (apkStart)
         {
@@ -208,5 +208,5 @@ public class LevelController : MonoBehaviour
             Elephant.LevelCompleted(PlayerPrefs.GetInt("level") + 1);
             apkSuccess = false;
         }
-    }*/
+    }
 }
