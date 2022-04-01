@@ -209,7 +209,7 @@ public class PlayerController : MonoBehaviour
                 House1.SetActive(false);
                 House2.SetActive(false);
                 House3.SetActive(false);
-                House4.SetActive(false);
+                House6.SetActive(false);
             }
             if(score >= 45)
             {
